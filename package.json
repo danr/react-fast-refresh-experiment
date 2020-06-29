@@ -1,0 +1,24 @@
+{
+  "name": "react-fast-refresh-experiment",
+  "version": "0.0.1",
+  "description": "Experiment with esbuild and react fast refresh",
+  "main": "index.tsx",
+  "author": "Dan Rosén",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "esbuild": "^0.5.14",
+    "live-server": "^1.2.1",
+    "react-refresh": "^0.8.3",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "serve": "cd dist; live-server",
+    "entr": "ls * | entr -c yarn run esbuild index.tsx --outdir=dist --target=es6 --bundle \"--define:process.env.NODE_ENV='development'\""
+  }
+}
